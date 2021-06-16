@@ -109,7 +109,7 @@ def decode():
         extracted = [frame_bytes[i] & 1 for i in range(len(frame_bytes))]
         string = "".join(chr(int("".join(map(str, extracted[i:i + 8])), 2)) for i in range(0, len(extracted), 8))
         decoded = string.split("###")[0]
-        T = Text(root, height=10, width=50)
+        T = Text(tab1, height=10, width=50)
         T.insert(tkinter.END, decoded)
         T.place(x=300, y=300)
         audio.close()
